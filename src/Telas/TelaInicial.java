@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 
 package Telas;
 
-/**
- *
- * @author Usuário
- */
+import minhas_receitas.Conexao;
+
+
 public class TelaInicial extends javax.swing.JFrame {
 
     /** Creates new form TelaInicial */
@@ -115,6 +111,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
     
     public static void main(String args[]) {
+      
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
