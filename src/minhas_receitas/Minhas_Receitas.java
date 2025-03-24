@@ -10,6 +10,7 @@ public class Minhas_Receitas {
     public static void main(String[] args) throws SQLException {
         ConexaoJDBC conexao = new ConexaoJDBC();
         conexao.conectar();
+        conexao.desconectar();
     new TelaInicial().setVisible(true);
                 
  

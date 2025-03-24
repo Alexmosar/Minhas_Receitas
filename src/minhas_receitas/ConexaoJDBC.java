@@ -16,4 +16,14 @@ public class ConexaoJDBC{
             System.out.println(ex + "erro de conexao");
               }
     }
+   public void desconectar(){
+        try {
+            if(conn !=null && !conn.isClosed()){
+                conn.close();
+                System.out.println("Conexao encerrada");
+            }} catch (SQLException ex) {
+                System.out.println("Erro ao desconectar");
+            }
+   } 
+  
 }
