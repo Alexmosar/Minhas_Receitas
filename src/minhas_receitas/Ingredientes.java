@@ -5,28 +5,35 @@ import java.util.Date;
 
 
 public class Ingredientes {
-    String nomeIng;
-    String quantidadeIng;
+    int id;
+    String nome;
+    int quantidade;
+    String tipo;
     String dataCompra;
     String validadeIng;
 
-    public Ingredientes(){
-        
-    }
-     public String getNomeIng() {
-        return nomeIng;
+    public int getId() {
+        return id;
     }
 
-    public void setNomeIng(String nomeIng) {
-        this.nomeIng = nomeIng;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getQuantidadeIng() {
-        return quantidadeIng;
+    public String getNome() {
+        return nome;
     }
 
-    public void setQuantidadeIng(String quantidadeIng) {
-        this.quantidadeIng = quantidadeIng;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public String getDataCompra() {
@@ -45,18 +52,46 @@ public class Ingredientes {
         this.validadeIng = validadeIng;
     }
 
-  
-
-    public Ingredientes(String nomeIng, String quantidadeIng, String dataCompra, String validadeIng) {
-        this.nomeIng = nomeIng;
-        this.quantidadeIng = quantidadeIng;
-        this.dataCompra = dataCompra;
-        this.validadeIng = validadeIng;
-       
+    public String getTipo() {
+        return tipo;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     
-    
-    
-    
+
+  
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
+
+    public Ingredientes(int id, String nome, int quantidade, String tipo, String dataCompra, String validadeIng) {
+        this.id = id;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.tipo = tipo;
+        this.dataCompra = dataCompra;
+        this.validadeIng = validadeIng;
+    }
+
+   
+
+    public Ingredientes() {
+    }
+
+    public void getNome(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void getQuantidadeReceita(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void getTipo(String peso) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+  
 }

@@ -1,13 +1,14 @@
 
 package Telas;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import minhas_receitas.ConexaoJDBC;
 import minhas_receitas.Ingredientes;
-import minhas_receitas.Listagem;
-/**
- *
- * @author Usuário
- */
+import minhas_receitas.ListaIngredientes;
+
 public class CadastrarIngredientes extends javax.swing.JFrame {
 
   
@@ -135,13 +136,25 @@ public class CadastrarIngredientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnCadastrarIngredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarIngredientesActionPerformed
+       
+        
         Ingredientes ingrediente = new Ingredientes();
-        ingrediente.setNomeIng(txtInfrediente.getText());
-        ingrediente.setQuantidadeIng(txtQuantidade.getText());
+        ingrediente.setNome(txtInfrediente.getText());
+        ingrediente.setQuantidade((int) Double.parseDouble(txtQuantidade.getText()));
         ingrediente.setDataCompra(txtDataCompra.getText());        
         ingrediente.setValidadeIng(txtValidade.getText());
-        Listagem.Adicionar(ingrediente);
+       // ListaIngredientes.adicionarIngrediente(ingrediente);
         
+        ConexaoJDBC conexao = new ConexaoJDBC();
+        try {
+            conexao.conectar();
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastrarIngredientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conexao.salvarIngredientes(ingrediente);
+        conexao.desconectar();
+        JOptionPane.showMessageDialog(this, ""
+                + "cadastro realizado com sucesso");
         
         
            JOptionPane.showMessageDialog(null, "Os seguintes dados foram cadastrados com sucesso: \n"
@@ -156,9 +169,7 @@ public class CadastrarIngredientes extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btnCadastrarIngredientesActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
